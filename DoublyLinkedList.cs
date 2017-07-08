@@ -164,6 +164,10 @@ namespace DoublyLinkedList
                         {
                             Tail = previous;
                         }
+                        else
+                        {
+                            current.Next.Previous = previous;
+                        }
                         Count--;
 
                     }
