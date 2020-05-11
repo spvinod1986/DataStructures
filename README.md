@@ -3,9 +3,9 @@ This project demonstrates data structure and algorithm concepts with examples.
 
 ## Big O
 Describes performance of an alogorithm.
-Time Complexity:
+- Time Complexity:
     - Time algorithm consumes based on length/size of input.
-Space Complexity:
+- Space Complexity:
     - (Extra)Space required by algorithm based on length/size of input.
     - Space allocated for input is not counted.
 
@@ -33,4 +33,13 @@ Space Complexity:
     - Not scalable at all.
     - As input size grows, the number of operations performed grows exponentially.
 
-## Arrays
+## Basic Data Structures
+* Arrays:
+    - Simplest data structure.
+    - In C# : Static(Array) - Fixed size vs Dynamic(List<T>) - Grows or Shrinks automatically.
+    - LookupByIndex -> O(1).
+    - LookupByValue -> O(n).
+    - Insert -> O(n).
+    - Remove -> O(n).
+* LinkedLists:
+    - 
