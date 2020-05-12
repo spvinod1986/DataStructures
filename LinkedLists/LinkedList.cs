@@ -135,6 +135,52 @@ namespace LinkedLists
 
             return array;
         }
+
+        public void Reverse()
+        {
+            if (first == null)
+                return;
+
+            var previous = first;
+            var current = first.next;
+
+            while (current != null)
+            {
+                var next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+
+            last = first;
+            last.next = null;
+            first = previous;
+        }
+
+        public int GetKthFromTheEnd(int k)
+        {
+            if (first == null)
+                throw new InvalidOperationException("The list is empty");
+
+            var x = first;
+            var y = first;
+
+            for (int i = 0; i < k - 1; i++)
+            {
+                y = y.next;
+
+                if (y == null)
+                    throw new InvalidOperationException("k is larger than size of list");
+            }
+
+            while (y != last)
+            {
+                x = x.next;
+                y = y.next;
+            }
+
+            return x.value;
+        }
         private class Node
         {
             public int value { get; set; }
