@@ -62,6 +62,10 @@ Describes performance of an algorithm.
 * LinkedLists(Doubly):
     - Each node has 3 pieces of data. 1) address of previous node, 2) value, 3) address of next node.
     - DeleteFromEnd -> O(1).
-
+* Stacks:
+    - Last In First Out(LIFO).
+    - Can be used for reverse order, Undo, forward/backward navigations, evaluating expressions etc.
+    - Stacks is just a wrapper around array or linked list.
+    - All operations in stack runs in O(1).
     
     
