@@ -67,5 +67,9 @@ Describes performance of an algorithm.
     - Can be used for reverse order, Undo, forward/backward navigations, evaluating expressions etc.
     - Stacks is just a wrapper around array or linked list.
     - All operations in stack runs in O(1).
+* Queues:
+    - First In First Out(FIFO).
+    - Can be used in service bus, printers, incoming requests in web servers.
+    - All operations in queue runs in O(1).
     
     
