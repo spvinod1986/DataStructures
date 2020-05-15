@@ -66,10 +66,32 @@ Describes performance of an algorithm.
     - Last In First Out(LIFO).
     - Can be used for reverse order, Undo, forward/backward navigations, evaluating expressions etc.
     - Stacks is just a wrapper around array or linked list.
-    - All operations in stack runs in O(1).
+    - All operations in stack runs in O(1). 
+    - Operations: Push, Pop, Peek.
 * Queues:
     - First In First Out(FIFO).
     - Can be used in service bus, printers, incoming requests in web servers.
-    - All operations in queue runs in O(1).
+    - All operations in queue runs in O(1). 
+    - Operations: Enqueue, Dequeue, Peek.
+* HashTables:
+    - Also called Dictionaries. Provides super fast lookups.
+    - Can be used for Spell Checkers, Language Dictionaries, Compilers, Code Editors etc.
+    - Used to store Key-Value pairs.
+    - HashSet or Set is also form of HashTable. It has only keys and accepts no duplicate elements.
+    - Key should be unique which is hashed using hashfunction which returns address in which value is or can be saved.
+    - Key can be null. Value can also be null.
+    - Hash function should be deterministic. It means it should always return same output for same input.
+    - Internally HashTables uses arrays to store objects.
+    - Hasfunction maps key to an index for storage.
+    - All operations in HashTable runs in O(1). 
+    - Operations: Insert, Lookup, Delete.
+    - Collision: Possibility of 2 distinct keys generating same hash value. 
+    - Chaining and OpenAddressing are 2 solutions for collision problem.
+    - Chaining: Using linkedlist to store multiple items at same array index.
+    - OpenAddressing: Address of the key value pair is not determined by hash function. Requires search for available empty address using Probing algorithms.
+    - 3 Popular Probing Algorithms - Linear, Quadratic, and Double.
+    - OpenAddressing-LinearProbing: (hask(key) + i) % tablesize. Start from current slot and move one by one until you find empty slot until you reach boundary of array. If all slots are full then array is full. Probing will take longer as items will eventually form clusters.
+    - OpenAddressing-Quadratic: (hash(key) + i^2) % tablesize. Solves clustering problem as empty slots are searched in square of values. Chances of infinite loops are high.
+    - OpenAddressing-DoubleHashing: If collision in first hash then find second hash using prime - (key % prime). Then does (hash1 + i*hash2) % tablesize. If this is not unique then used linear probing.
     
     
