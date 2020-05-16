@@ -33,7 +33,7 @@ Describes performance of an algorithm.
     - Not scalable at all.
     - As input size grows, the number of operations performed grows exponentially.
 
-## Basic Data Structures
+## Basic Linear Data Structures
 * Arrays:
     - Simplest data structure.
     - In C# : Static(Array) - Fixed size vs Dynamic(List<T>) - Grows or Shrinks automatically.
@@ -82,7 +82,7 @@ Describes performance of an algorithm.
     - Key can be null. Value can also be null.
     - Hash function should be deterministic. It means it should always return same output for same input.
     - Internally HashTables uses arrays to store objects.
-    - Hasfunction maps key to an index for storage.
+    - Hashfunction maps key to an index for storage.
     - All operations in HashTable runs in O(1). 
     - Operations: Insert, Lookup, Delete.
     - Collision: Possibility of 2 distinct keys generating same hash value. 
@@ -93,5 +93,31 @@ Describes performance of an algorithm.
     - OpenAddressing-LinearProbing: (hask(key) + i) % tablesize. Start from current slot and move one by one until you find empty slot until you reach boundary of array. If all slots are full then array is full. Probing will take longer as items will eventually form clusters.
     - OpenAddressing-Quadratic: (hash(key) + i^2) % tablesize. Solves clustering problem as empty slots are searched in square of values. Chances of infinite loops are high.
     - OpenAddressing-DoubleHashing: If collision in first hash then find second hash using prime - (key % prime). Then does (hash1 + i*hash2) % tablesize. If this is not unique then used linear probing.
+
+## Non-Linear Data Structures
+* Trees:
+    - Data structures that stores elements in hierarchy.
+    - Elements are referred as nodes and the lines that connect them are called edges.
+    - Nodes can be objects or value types.
+    - Top Node is called Root. Each node can have 1 or more children.
+    - Bottom nodes with no children are called Leaf nodes.
+    - Trees are used to represent hierarchial data like folders in disk, indexing in database, compilers.
+* Binary Trees:
+    - If nodes can have maximum of only 2 children then the tree is called Binary Tree.
+    - Binary Search Tree is a special type of binary tree where the left < node < right.
+    - Binary Search Tree: Lookup is O(log n), Insert is O(log n) and Delete is O(log n).
+    - Linear data structures (like linked list)only have one way for traversal. Start from first node and traverse till we reach the end.
+    - Trees can be traversed in 2 ways. 1) Breadth First and 2) Depth First.
+    - Breadth First Traversal is also called Level Order Traversal.
+    - Breadth First : All nodes in same level is traversed first before visiting the next level.
+    - Depth First can be done in 3 ways. 1) Pre-Order 2) In-Order and 3) Post-Order.
+    - Pre-Order: Root, Left, Right.
+    - In-Order: Left, Root, Right(for ascending order) or Right, Root, Left(for descending order).
+    - Post-Order: Left, Right, Root.
+    - Depth of Node: Depth of root is 0. The path from root to target node or the number of edges from root to target node.
+    - Height of Node: Opposite of Depth. Height of leaf nodes are 0. Longest path from the node to leaf is the height of the node. The height of root node is also called the height of the tree.
+    - Formula for calculating height of node is 1 + max(height(L),height(R)).
+    - The minimum value of binary search tree is equal to value of left most leaf where as minimum value of binary tree need to be calculated using recursion to find minimum of left and right sub tree and compare it with root value. So the time complexity of this operation in binary tree is O(n) where as that of Binary search tree is O(log n).
+
     
     
