@@ -117,7 +117,24 @@ Describes performance of an algorithm.
     - Depth of Node: Depth of root is 0. The path from root to target node or the number of edges from root to target node.
     - Height of Node: Opposite of Depth. Height of leaf nodes are 0. Longest path from the node to leaf is the height of the node. The height of root node is also called the height of the tree.
     - Formula for calculating height of node is 1 + max(height(L),height(R)).
-    - The minimum value of binary search tree is equal to value of left most leaf where as minimum value of binary tree need to be calculated using recursion to find minimum of left and right sub tree and compare it with root value. So the time complexity of this operation in binary tree is O(n) where as that of Binary search tree is O(log n).
-
+    - The minimum value in binary search tree is equal to value of left most leaf where as minimum value of binary tree need should be calculated using recursion to find minimum of left and right sub tree and compare it with root value. So the time complexity of this operation in binary tree is O(n) where as that of Binary search tree is O(log n).
+* AVL Trees:
+    - Most of operations in binary search tree runs in logarithmic time. But this can happen only if the tree is balanced.
+    - Balanced Tree: height(left) - height(right) <= 1.
+    - Right Skewed Tree: Most of the nodes in the tree only has right child. eg: Inserting values in ascending order in binary search tree results in right skewed tree.
+    - Left Skewed Tree: Most of the nodes in the tree inly has left child. eg: Inserting values in descending order in binary search tree results in left skewed tree.
+    - The skewed trees are worst type of binary tree. They work similar to linear data structur like linked list.
+    - Trees can be self balanced by using different algorithms.
+    - Self balancing algorithms: AVL Trees, Red-Black Trees, B-Trees, Splay Trees, 2-3Trees, etc.
+    - AVL Trees named after inventors Adelson-Vesky and Landis.
+    - AVL Trees are special form of binary search trees that rebalance themselves everytime you add or remove nodes. They check if tree is balanced using formula and rebalance themselves after every operation.
+    - AVL Trees rebalance themselves using Rotations.
+    - Rotations are of 4 types: 1) Left(LL), 2) Right(RR), 3) Left-Right(LR), and 4) Right-Left(RL). Each Rotation is used based on what side of tree is heavy.
+    - If heavy on right, then do Left Rotation(LL). If heavy on left, then do Right Rotation(RR). If imbalance is on left child - right subtree, then do Left Rotation followed by Right Rotation(LR). If imbalance is on right child - left subtree, then do Right Rotation followed by Left Rotation(RL).
+    - Balance Factor: Height(Left) - Height(Right). 
+    - If Balance Factor > 1, then LeftHeavy, hence do Right Rotation.
+    - If Balance Factor > 1 and Balance Factor of Left Child < 0, then do Left-Right Rotation.
+    - If Balance Factor < -1, then RightHeavy, hence do Left Rotation.
+    - If Balance Factor < -1 and Balance Factor of Right Child > 0, then do Right-Left Rotation.
     
     
