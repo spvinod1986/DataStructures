@@ -73,6 +73,9 @@ Describes performance of an algorithm.
     - Can be used in service bus, printers, incoming requests in web servers.
     - All operations in queue runs in O(1). 
     - Operations: Enqueue, Dequeue, Peek.
+    - Time complexity of Enqueue operation in Priority Queue implemented using Queue will be O(n).
+    - Time complexity of Dequeue operation in Priority Queue implemented using Queue will be O(1).
+    - Time complexity of Enqueue/Dequeue operation in Priority Queue implemented using Heap will be O(log n).
 * HashTables:
     - Also called Dictionaries. Provides super fast lookups.
     - Can be used for Spell Checkers, Language Dictionaries, Compilers, Code Editors etc.
@@ -136,5 +139,24 @@ Describes performance of an algorithm.
     - If Balance Factor > 1 and Balance Factor of Left Child < 0, then do Left-Right Rotation.
     - If Balance Factor < -1, then RightHeavy, hence do Left Rotation.
     - If Balance Factor < -1 and Balance Factor of Right Child > 0, then do Right-Left Rotation.
+* Heaps:
+    - Heap is a special type of tree with 2 properties: 1) Complete Tree and 2) Heap Property.
+    - Complete Tree: Every level except potentially last level is completely filled and levels are filled from Left to Right.
+    - Heap Property: 1) Max Heap - Value of every node should be greater than or equal to children. 2) Min Heap - Value of every node should be lesser than or equal to children.
+    - Heap is a "Complete Tree" which satisfies "Heap Property".
+    - Heaps of Binary Tree can be more accurately called as Binary Heap.
+    - Heaps are used in Shortest Path/Graph alogirthms(GPS), Priority Queues, sorting, findingd nth smallest or largest values.
+    - Bubble Up: Swapping a node with parent in order to satisfy Heap Property.
+    - Bubble Down: Opposite of Bubble up. Swapping a parent with node in order to satisfy Heap property. This usually happens during Delete.
+    - In Heaps, we can only delete root node and not inner node.
+    - Time Complexity: Insert/Remove : O(log n).The longest a value can travel in heap = height of tree. This is equal to finding a value in binary search tree.
+    - Finding maximum value in Max Heap is O(1). Similarly finding minimum value in Min Heap is O(1).
+    - Heaps can be implemented using arrays even though they are conceptually Binary Tree. As Heaps are "Complete Binary Trees" and they donot have any holes (missing nodes) in them, it is more efficient to implement them using array. Small memory foot print because of that.
+    - Formula to calculate array index of Left and Right children from Parent Index: Left = ParentIndex * 2 + 1. Right = ParentIndex * 2 + 2.
+    - Formula to calculate array index of Parent from Children: Parent = (Child index - 1)/2.
+    - Heap Sort: Removing elements from Max Heap will return elements in descending order. Removing elements from Min Heap will return elements in ascending order.
+    - Priority Queues: Time complexity of Enqueue/Dequeue operation in Priority Queue implemented using Heap will be O(log n).
+    - Heapify Algorithm: Algorithm used to convert regular arrays to Heap arrays. Iterate through all array elements and move it to satisfy heap property. More optimised option is to iterate through all array elements eliminating leaf nodes (start from last parent). Formula to find last parent: (n/2)-1.
+
     
     
