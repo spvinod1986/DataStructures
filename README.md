@@ -157,6 +157,14 @@ Describes performance of an algorithm.
     - Heap Sort: Removing elements from Max Heap will return elements in descending order. Removing elements from Min Heap will return elements in ascending order.
     - Priority Queues: Time complexity of Enqueue/Dequeue operation in Priority Queue implemented using Heap will be O(log n).
     - Heapify Algorithm: Algorithm used to convert regular arrays to Heap arrays. Iterate through all array elements and move it to satisfy heap property. More optimised option is to iterate through all array elements eliminating leaf nodes (start from last parent). Formula to find last parent: (n/2)-1.
+* Tries:
+    - Tries are another kind of trees but they are not binary trees. Each child can have several nodes.
+    - Other names for Tries are Retrieval, Digital, Radix and Prefix.
+    - Used to implement auto completion.
+    - Insert/Delete/Lookup runs in O(L), where L is equal to number of characters in the word we are trying to insert, delete or lookup.
+    - Tries can be traversed in 2 ways: 1) Pre-Order and 2) Post-Order.
+    - Pre-Order: Root will be visited first before children.
+    - Post-Order: Leaf nodes to root.
 
     
     
