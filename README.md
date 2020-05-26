@@ -204,18 +204,28 @@ Describes performance of an algorithm.
     - Prim's Alogirthm - Popular Algorithm to find minimum spanning tree of a graph or tree with minimum cost. Idea of algorithn is to extend the tree by adding the smallest connected edge. This is another example of Greedy Algorithm.
 
 ## Sorting Algorithms
-* BubbleSort:
+* Bubble Sort:
     - Simplest of all sorting algorithms.
     - Scan the array from left to right one by one and and if it is out of order then swap them one at a time. Requires multiple passes to swap all items in the array.
     - Time Complexity: Best case scenario where array is already sorted then bubble sort requires O(1) pass. In worst cases scenario where it is not sorted then it requires O(n) passes. Irespective of passes, bubble sort requires O(n) comparisons. So Bubble Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
-* SelectionSort:
+* Selection Sort:
     - In selection sort, in each pass, you will find or select the next minimum value and move it in to correct position. 
     - We need multiple passes to sort the array. In first pass, we should find the next smallest item in the array and move it in to correct position. This divides the array in to 2 parts. Sorted part and Unsorted part. In the next pass, we should find the next minimum item in the unsorted part and move it as next item in sorted part.
     - Time Complexity: We need n passes for both best and worst case scenario hence O(n) pass required. In each pass we need to find minimum value in unsorted part of the array. Though technically, the unsorted part of array shrinks in size after each pass, it is still seen as O(n) operation. So Selection Sort runs in O(n^2) or quadratic time in best or worst cases scenario and hence it is seen as fairly slow algorithm.
     - Why we need n pass if the array is already sorted or in best case scenario: If an array is already sorted, In bubble sort, you can find it after first pass because each item is compared with the following one where as in selection sort we are not comparing each item with following one, instead we are finding the next minimum value.
-* InsertionSort:
+* Insertion Sort:
     - During each pass, take one item and insert it at the right position. Take the first item and it is the only item we have now, so assume it is in correct position. Then move to next item, if the next item is smaller than any previous element we have seen so far, then move the elements in sorted part to right to make space to insert the smaller item.
     - Time Complexity: We need to pass through all items atleast one in best or worst case scenario. Hence O(n) pass required. If the array is already sorted, then we may not need to shift any items, so shifting is O(1) in best case scenario but in worst case scenario we need to shift n items and hence it is O(n). So Insertion Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
+* Merge Sort:
+    - The top 3 algorithms (Bubble, Selection, Insertion) are inefficient and runs in quadratic time.
+    - Merge Sort and other algorithms are efficient and runs in O(n log n).
+    - The idea of merge sort is to break down a list in to smaller and smaller sublist, then sort those and merge them back to build a completed sorted list. Merge Sort is also called as Divide and Conquer algorithm. It works by dividing a problem in to smaller sub problems until it becomes esy enough to solve. And then it combines the solution to build solution for the original problem.
+    - Time Complexity: Dividing runs in O(log n) in best and worst case scenario. Merging is O(n) operation for best and worst case as you need to read all elements from sub array to merge. Hence Merge Sort runs in O(n log n) in best and worst case scenario.
+    - Merge Sort or algorithm that runs in O(n log n) complexity is way more better than the algorithm that runs in linear or quadratic time. But Merge Sort comes with a cost, the cost of allocation additional space. Every time we split an array, we need to allocate space for 2 new subarrays, whose sum will be equivalent to the space of original array. So the space complexity of Merge Sort is O(n).
+    - There are some variations of this algorithm (called in-place merge sort) where you can sort the elements without allocation of additional space.
+* Quick Sort:
+    - 
+
 
 
     
