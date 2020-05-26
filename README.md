@@ -1,4 +1,4 @@
-# DataStructures and Algorithm
+# DataStructures and Algorithms
 This project demonstrates data structure and algorithm concepts with examples.
 
 ## Big O
@@ -202,6 +202,12 @@ Describes performance of an algorithm.
     - Dijkstra's Algorithm: Classic alogirthm for finding shortest path between 2 nodes of a graph. This is an example for Greedy Algorithm. A Greedy algorithm tries to find the optimal solution to a problem by making optimal choices in each step. In Dijkstra's algorithm we try to find shortest path between current nodes and all it neighbours.
     - Spanning Tree: A graph can be converted to a tree. A tree is a graph without a cycle. Removing edges from a graph but still keeping all nodes in a graph directly or indirectly connected results in spanning tree. There is many ways to create spanning tree for a given graph. If there are n nodes in a graph then a spanning tree should have n-1 edges. If there are more than n-1 edges then we will have a cycle and it is no longer a tree. If it has lass than n-1 edges then not all of the nodes are connected. Each spanning tree will have cost which is equal to sum of weight of the edges.
     - Prim's Alogirthm - Popular Algorithm to find minimum spanning tree of a graph or tree with minimum cost. Idea of algorithn is to extend the tree by adding the smallest connected edge. This is another example of Greedy Algorithm.
+
+## Sorting Algorithms
+* BubbleSort:
+    - Simplest of all sorting algorithms.
+    - Scan the array from left to right one by one and and if it is out of order then swap them. Requires multiple passes to swap all items in the array.
+    - Time Complexity : Best case scenario where array is already sorted then bubble sort requires O(1) pass. In worst cases scenario where it is not sorted then it requires O(n) passes. Irespective of passes, bubble sort requires O(n) comparisons. So Bubble Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
 
 
     
