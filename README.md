@@ -206,8 +206,15 @@ Describes performance of an algorithm.
 ## Sorting Algorithms
 * BubbleSort:
     - Simplest of all sorting algorithms.
-    - Scan the array from left to right one by one and and if it is out of order then swap them. Requires multiple passes to swap all items in the array.
-    - Time Complexity : Best case scenario where array is already sorted then bubble sort requires O(1) pass. In worst cases scenario where it is not sorted then it requires O(n) passes. Irespective of passes, bubble sort requires O(n) comparisons. So Bubble Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
+    - Scan the array from left to right one by one and and if it is out of order then swap them one at a time. Requires multiple passes to swap all items in the array.
+    - Time Complexity: Best case scenario where array is already sorted then bubble sort requires O(1) pass. In worst cases scenario where it is not sorted then it requires O(n) passes. Irespective of passes, bubble sort requires O(n) comparisons. So Bubble Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
+* SelectionSort:
+    - In selection sort, in each pass, you will find or select the next minimum value and move it in to correct position. 
+    - We need multiple passes to sort the array. In first pass, we should find the next smallest item in the array and move it in to correct position. This divides the array in to 2 parts. Sorted part and Unsorted part. In the next pass, we should find the next minimum item in the unsorted part and move it as next item in sorted part.
+    - Time Complexity: We need n passes for both best and worst case scenario hence O(n) pass required. In each pass we need to find minimum value in unsorted part of the array. Though technically, the unsorted part of array shrinks in size after each pass, it is still seen as O(n) operation. So Selection Sort runs in O(n^2) or quadratic time in best or worst cases scenario and hence it is seen as fairly slow algorithm.
+    - Why we need n pass if the array is already sorted or in best case scenario: If an array is already sorted, In bubble sort, you can find it after first pass because each item is compared with the following one where as in selection sort we are not comparing each item with following one, instead we are finding the next minimum value.
+* InsertionSort:
+    - 
 
 
     
