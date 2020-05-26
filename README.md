@@ -214,7 +214,8 @@ Describes performance of an algorithm.
     - Time Complexity: We need n passes for both best and worst case scenario hence O(n) pass required. In each pass we need to find minimum value in unsorted part of the array. Though technically, the unsorted part of array shrinks in size after each pass, it is still seen as O(n) operation. So Selection Sort runs in O(n^2) or quadratic time in best or worst cases scenario and hence it is seen as fairly slow algorithm.
     - Why we need n pass if the array is already sorted or in best case scenario: If an array is already sorted, In bubble sort, you can find it after first pass because each item is compared with the following one where as in selection sort we are not comparing each item with following one, instead we are finding the next minimum value.
 * InsertionSort:
-    - 
+    - During each pass, take one item and insert it at the right position. Take the first item and it is the only item we have now, so assume it is in correct position. Then move to next item, if the next item is smaller than any previous element we have seen so far, then move the elements in sorted part to right to make space to insert the smaller item.
+    - Time Complexity: We need to pass through all items atleast one in best or worst case scenario. Hence O(n) pass required. If the array is already sorted, then we may not need to shift any items, so shifting is O(1) in best case scenario but in worst case scenario we need to shift n items and hence it is O(n). So Insertion Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
 
 
     
