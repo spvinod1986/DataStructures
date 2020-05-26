@@ -224,7 +224,14 @@ Describes performance of an algorithm.
     - Merge Sort or algorithm that runs in O(n log n) complexity is way more better than the algorithm that runs in linear or quadratic time. But Merge Sort comes with a cost, the cost of allocation additional space. Every time we split an array, we need to allocate space for 2 new subarrays, whose sum will be equivalent to the space of original array. So the space complexity of Merge Sort is O(n).
     - There are some variations of this algorithm (called in-place merge sort) where you can sort the elements without allocation of additional space.
 * Quick Sort:
-    - 
+    - Most used Sorting algorithm and is the one built in to most languages and frameworks.
+    - It is fairly efficient algorithm and unlike merge sort it does not require any extra space.
+    - It starts off by selecting an item called Pivot. Then rearrange the items such that all the items smaller than Pivot on the left and all the items greater than pivot are on the right side of the pivot. This is called partitioning. Typically last item is selected as Pivot. The order of items in left and right partition does not matter as long as they are smaller than Pivot in left and greater than pivot in right. When you pick a pivot and partition an array, the pivot will move to the correct position and position of pivot will never change after that. Then the same steps are repeated for the left and right partition.
+    - Time Complexity: Partitioning takes O(n) operation for best and worst scenarios as we have to iterate through all the items and swap them as necessary. The number of times to partition an array varies based on the selection of partition. In the best case scenario, if after the first partition, the pivot ends up in the middle then the complexity is O(log n). In the worst case scenario, if the pivot ends in extreme left or right, then the number of partitions required will be equal to O(n).
+    - There are few pivot selection strategies used to work around identifying pivot issues. 1) Pick Pivot randomly 2) Use the middle index as Pivot 3) Average of first, middle and last item. These strategies will not prevent the worst case scenarios but it will help decrease the livelihood.
+    - The time complexity of Quick Sort can be O(n log n) for best case scenario and O(n^2) for worst case scenario.
+    - Space Complexity: Unlike merge sort, we are not allocating extra space for quick sort. We may need to consider space required for recursive call because the runtime uses stack to keep track of these recursive calls. The number of times of recursive call is equal to how many times we need to partition the array. The space complexity of Quick Sort is O(log n) for best case scenario and O(n) for worst case scenario.
+
 
 
 
