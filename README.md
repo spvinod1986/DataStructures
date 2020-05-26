@@ -231,7 +231,13 @@ Describes performance of an algorithm.
     - There are few pivot selection strategies used to work around identifying pivot issues. 1) Pick Pivot randomly 2) Use the middle index as Pivot 3) Average of first, middle and last item. These strategies will not prevent the worst case scenarios but it will help decrease the livelihood.
     - The time complexity of Quick Sort can be O(n log n) for best case scenario and O(n^2) for worst case scenario.
     - Space Complexity: Unlike merge sort, we are not allocating extra space for quick sort. We may need to consider space required for recursive call because the runtime uses stack to keep track of these recursive calls. The number of times of recursive call is equal to how many times we need to partition the array. The space complexity of Quick Sort is O(log n) for best case scenario and O(n) for worst case scenario.
-
+* Counting Sort:
+    - All sorting algorithms above are comparsion bast sorting algorithms. There are bunch of sorting algorithms that don't use comparisons (like Counting Sort, Bucket Sort and Radix Sort).
+    - If you have list of integers in range of 0 to k. To sort this array, we find the number of times the integers appear or the frequency of the integers in the array. These frequencies are represented using another array called counts array with index equal to the range of integers in original array. We iterate through the original array and find the frequency of integer and increment the frequency of the integer in the counts array where index is equal to the integer. Once the counts array is ready, we can now use the counts array to sort the data and refill the input array.
+    - Space Complexity: Extra space is required for counts array. If k is maximum of the elements in input array then the space complexity is O(k).
+    - Time Complexity: Populating counys array, requires iterating over input array which is O(n) complexity. Then we need to iterate through counts array and refill input array which is O(k) operation. So the time complexity is O(n + k) which is equal to O(n). 
+    - Linear complexity is better than O(n log n) or quadratic complexity. So Counting Sort is better than the above sort based on scenario. Because Counting Sort comes with a cost , the cost of allocating extra space. This is called as Time-memory trade off in computer science.
+    - When to use Counting Sort: 1) Allocating extra space is not an issue, 2) Values should be postivie integers otherwise we cannot use them as index in counts array, 3) Most the of the values in the range are present other wise we will end up with lot of empty or 0 in counts array.
 
 
 
