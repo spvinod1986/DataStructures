@@ -247,7 +247,5 @@ Describes performance of an algorithm.
     - Space Complexity: if we have k buckets then we have to allocate array of k items and each item in this array will be linked list. Total number of items around all this linked list will be equal to the total number of items in input array. So the space complexity is O(n + k).
     - Time Complexity: Distributing items from input array to buckets array is O(n) operation in best and worst scenario. Then we will need to iterate through buckets array and put the elements back in input array which is O(k) operation in best and worst scenario. Sorting depends on the underlying algorithm used to sort. In best case scenario, we can have single element in each bucket in which case sorting can be O(1) operation. In worst case scenario, all the elements are in single bucket in which case sorting can be O(n^2) operation (considering insertion sort). So the time complexity of bucket sort in best case scenario is O(n + k) or O(n) which is linear and for worst case scenario is O(n^2). So the time complexity depends on the number of buckets. The more buckets will save time but cost space.
 
-
-
     
     
