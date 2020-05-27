@@ -238,6 +238,14 @@ Describes performance of an algorithm.
     - Time Complexity: Populating counys array, requires iterating over input array which is O(n) complexity. Then we need to iterate through counts array and refill input array which is O(k) operation. So the time complexity is O(n + k) which is equal to O(n). 
     - Linear complexity is better than O(n log n) or quadratic complexity. So Counting Sort is better than the above sort based on scenario. Because Counting Sort comes with a cost , the cost of allocating extra space. This is called as Time-memory trade off in computer science.
     - When to use Counting Sort: 1) Allocating extra space is not an issue, 2) Values should be postivie integers otherwise we cannot use them as index in counts array, 3) Most the of the values in the range are present other wise we will end up with lot of empty or 0 in counts array.
+* Bucket Sort:
+    - Another sorting algorithm which does not use comparisons.
+    - The idea of bucket sort is to distribute items in to number of buckets. And then sort the buckets using another sorting algorithm and then finally we can iterate through the buckets array and put the elements in input array.
+    - Instead of sorting large arrays, here you can sort in buckets or smaller array and also you can run the bucket sorts in parallel.
+    - Simple formula for finding a bucket for an item: bucket = item/ number of buckets.
+    - How many buckets do we need: The more buckets we have, the more memory is required to store the buckets but we can sort each bucket in less time because of fewer items in each bucket.
+    - Space Complexity: if we have k buckets then we have to allocate array of k items and each item in this array will be linked list. Total number of items around all this linked list will be equal to the total number of items in input array. So the space complexity is O(n + k).
+    - Time Complexity: Distributing items from input array to buckets array is O(n) operation in best and worst scenario. Then we will need to iterate through buckets array and put the elements back in input array which is O(k) operation in best and worst scenario. Sorting depends on the underlying algorithm used to sort. In best case scenario, we can have single element in each bucket in which case sorting can be O(1) operation. In worst case scenario, all the elements are in single bucket in which case sorting can be O(n^2) operation (considering insertion sort). So the time complexity of bucket sort in best case scenario is O(n + k) or O(n) which is linear and for worst case scenario is O(n^2). So the time complexity depends on the number of buckets. The more buckets will save time but cost space.
 
 
 
