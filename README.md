@@ -258,6 +258,15 @@ Describes performance of an algorithm.
     - In binary search, once sorted, the idea is to look for index of middle item using the formula: middle = (left + right)/2. Then compare if the target is less than or equal to middle item. Based on that we can eliminate half of the list for search. This is another example of divide and conquer alogorithm. The same steps are repeated for the partition until the item is found.
     - Time Complexity: In all scenarios, the binary search works in O(log n) because in every step we divide the number of problems by almost half.
     - Space Complexity: Binary search can be implemented using recursion, in that case the runtime keeps track of recusion in stack which requires memory space which is equal to number of recursion calls which is equal to O(log n). Binary search can be implemented using iterative approach, in that case the space complexity is O(1).
+* Ternary Search:
+    - This is similar to binary search, but here instead of dividing the list to half in every step, we divide to 3 parts.
+    - Formula to calculate the partition size: (right - left)/3.
+    - Index for mid1: left + partitionsize, Index for mid2: right - partitionsize.
+    - The steps are then repeated for each partition. Ternary search can also be implemented using recursion or iteration approach.
+    - Time Complexity: As we are dividing the list to 3 partitions, the time complexity of ternary search in worst or best case is O(log base 3 of n).
+    - Logarithm: log base 2 of 8 = 3; log base 3 of 8 = 1.89.
+    - So both binary and ternary search runs in logarithmic time but binary search runs in log base 2 of n where as ternary search runs in log base 3 of n.
+    - Though ternary search seems to run faster than binary search, it is not true. In binary search you will need 3 comparisons (target == mid, target < mid, target > mid) where as in ternary search you will need 5 comparsions (target == mid1, target == mid2, target > mid2, targt < mid1, target < mid2 && target > mid1). Because of these mathematical comparisons, it is proven that ternary search takes more time than binary search. Hence binary search is faster than ternary search. The more partitions we have, the search can become slower.
 
 
     
