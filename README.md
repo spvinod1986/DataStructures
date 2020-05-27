@@ -267,6 +267,11 @@ Describes performance of an algorithm.
     - Logarithm: log base 2 of 8 = 3; log base 3 of 8 = 1.89.
     - So both binary and ternary search runs in logarithmic time but binary search runs in log base 2 of n where as ternary search runs in log base 3 of n.
     - Though ternary search seems to run faster than binary search, it is not true. In binary search you will need 3 comparisons (target == mid, target < mid, target > mid) where as in ternary search you will need 5 comparsions (target == mid1, target == mid2, target > mid2, targt < mid1, target < mid2 && target > mid1). Because of these mathematical comparisons, it is proven that ternary search takes more time than binary search. Hence binary search is faster than ternary search. The more partitions we have, the search can become slower.
+* Jump Search:
+    - Jump search is an improvement to linear search but it is not as fast as binary search.
+    - We divide the list in to several blocks and instead of checking every item, you jump to the block where the target item may exist. Then a linear search is performed only in that block.
+    - Size of block can be calculated using formula: Squareroot of n.
+    - Time Complexity: The maximum number of items we need to check in best or worst case scenario is equal to the size of the block, hence the time complexity is O(squareroot of n).
 
 
     
