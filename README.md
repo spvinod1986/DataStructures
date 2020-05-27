@@ -253,7 +253,12 @@ Describes performance of an algorithm.
     - Iterate over a list and find the item, once you find the item return index of that item otherwise return -1.
     - Time Complexity: In best case scenario, the target item is the first element in the list and we can find it in O(1) operation. In worst case scenario, the target item can be the last element or not present in the list and it takes O(n) operation.
 * Binary Search:
-    - 
+    - Binary search works only on sorted list. If the list is not sorted, then we have to sort the list using some sort algorithm before using binary search. So the sort will add to total cost in these cases.
+    - If there are multiple values to lookup in the list, then you can sort it once and do multiple search using binary search.
+    - In binary search, once sorted, the idea is to look for index of middle item using the formula: middle = (left + right)/2. Then compare if the target is less than or equal to middle item. Based on that we can eliminate half of the list for search. This is another example of divide and conquer alogorithm. The same steps are repeated for the partition until the item is found.
+    - Time Complexity: In all scenarios, the binary search works in O(log n) because in every step we divide the number of problems by almost half.
+    - Space Complexity: Binary search can be implemented using recursion, in that case the runtime keeps track of recusion in stack which requires memory space which is equal to number of recursion calls which is equal to O(log n). Binary search can be implemented using iterative approach, in that case the space complexity is O(1).
+
 
     
     
