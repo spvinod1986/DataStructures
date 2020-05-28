@@ -1,4 +1,4 @@
-# DataStructures and Algorithm
+# DataStructures and Algorithms
 This project demonstrates data structure and algorithm concepts with examples.
 
 ## Big O
@@ -203,6 +203,82 @@ Describes performance of an algorithm.
     - Spanning Tree: A graph can be converted to a tree. A tree is a graph without a cycle. Removing edges from a graph but still keeping all nodes in a graph directly or indirectly connected results in spanning tree. There is many ways to create spanning tree for a given graph. If there are n nodes in a graph then a spanning tree should have n-1 edges. If there are more than n-1 edges then we will have a cycle and it is no longer a tree. If it has lass than n-1 edges then not all of the nodes are connected. Each spanning tree will have cost which is equal to sum of weight of the edges.
     - Prim's Alogirthm - Popular Algorithm to find minimum spanning tree of a graph or tree with minimum cost. Idea of algorithn is to extend the tree by adding the smallest connected edge. This is another example of Greedy Algorithm.
 
+## Sorting Algorithms
+* Bubble Sort:
+    - Simplest of all sorting algorithms.
+    - Scan the array from left to right one by one and and if it is out of order then swap them one at a time. Requires multiple passes to swap all items in the array.
+    - Time Complexity: Best case scenario where array is already sorted then bubble sort requires O(1) pass. In worst cases scenario where it is not sorted then it requires O(n) passes. Irespective of passes, bubble sort requires O(n) comparisons. So Bubble Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
+* Selection Sort:
+    - In selection sort, in each pass, you will find or select the next minimum value and move it in to correct position. 
+    - We need multiple passes to sort the array. In first pass, we should find the next smallest item in the array and move it in to correct position. This divides the array in to 2 parts. Sorted part and Unsorted part. In the next pass, we should find the next minimum item in the unsorted part and move it as next item in sorted part.
+    - Time Complexity: We need n passes for both best and worst case scenario hence O(n) pass required. In each pass we need to find minimum value in unsorted part of the array. Though technically, the unsorted part of array shrinks in size after each pass, it is still seen as O(n) operation. So Selection Sort runs in O(n^2) or quadratic time in best or worst cases scenario and hence it is seen as fairly slow algorithm.
+    - Why we need n pass if the array is already sorted or in best case scenario: If an array is already sorted, In bubble sort, you can find it after first pass because each item is compared with the following one where as in selection sort we are not comparing each item with following one, instead we are finding the next minimum value.
+* Insertion Sort:
+    - During each pass, take one item and insert it at the right position. Take the first item and it is the only item we have now, so assume it is in correct position. Then move to next item, if the next item is smaller than any previous element we have seen so far, then move the elements in sorted part to right to make space to insert the smaller item.
+    - Time Complexity: We need to pass through all items atleast one in best or worst case scenario. Hence O(n) pass required. If the array is already sorted, then we may not need to shift any items, so shifting is O(1) in best case scenario but in worst case scenario we need to shift n items and hence it is O(n). So Insertion Sort runs in O(n) or linear time in best case scenario and O(n^2) or quadratic time in worst case scenario.
+* Merge Sort:
+    - The top 3 algorithms (Bubble, Selection, Insertion) are inefficient and runs in quadratic time.
+    - Merge Sort and other algorithms are efficient and runs in O(n log n).
+    - The idea of merge sort is to break down a list in to smaller and smaller sublist, then sort those and merge them back to build a completed sorted list. Merge Sort is also called as Divide and Conquer algorithm. It works by dividing a problem in to smaller sub problems until it becomes esy enough to solve. And then it combines the solution to build solution for the original problem.
+    - Time Complexity: Dividing runs in O(log n) in best and worst case scenario. Merging is O(n) operation for best and worst case as you need to read all elements from sub array to merge. Hence Merge Sort runs in O(n log n) in best and worst case scenario.
+    - Merge Sort or algorithm that runs in O(n log n) complexity is way more better than the algorithm that runs in linear or quadratic time. But Merge Sort comes with a cost, the cost of allocation additional space. Every time we split an array, we need to allocate space for 2 new subarrays, whose sum will be equivalent to the space of original array. So the space complexity of Merge Sort is O(n).
+    - There are some variations of this algorithm (called in-place merge sort) where you can sort the elements without allocation of additional space.
+* Quick Sort:
+    - Most used Sorting algorithm and is the one built in to most languages and frameworks.
+    - It is fairly efficient algorithm and unlike merge sort it does not require any extra space.
+    - It starts off by selecting an item called Pivot. Then rearrange the items such that all the items smaller than Pivot on the left and all the items greater than pivot are on the right side of the pivot. This is called partitioning. Typically last item is selected as Pivot. The order of items in left and right partition does not matter as long as they are smaller than Pivot in left and greater than pivot in right. When you pick a pivot and partition an array, the pivot will move to the correct position and position of pivot will never change after that. Then the same steps are repeated for the left and right partition.
+    - Time Complexity: Partitioning takes O(n) operation for best and worst scenarios as we have to iterate through all the items and swap them as necessary. The number of times to partition an array varies based on the selection of partition. In the best case scenario, if after the first partition, the pivot ends up in the middle then the complexity is O(log n). In the worst case scenario, if the pivot ends in extreme left or right, then the number of partitions required will be equal to O(n).
+    - There are few pivot selection strategies used to work around identifying pivot issues. 1) Pick Pivot randomly 2) Use the middle index as Pivot 3) Average of first, middle and last item. These strategies will not prevent the worst case scenarios but it will help decrease the livelihood.
+    - The time complexity of Quick Sort can be O(n log n) for best case scenario and O(n^2) for worst case scenario.
+    - Space Complexity: Unlike merge sort, we are not allocating extra space for quick sort. We may need to consider space required for recursive call because the runtime uses stack to keep track of these recursive calls. The number of times of recursive call is equal to how many times we need to partition the array. The space complexity of Quick Sort is O(log n) for best case scenario and O(n) for worst case scenario.
+* Counting Sort:
+    - All sorting algorithms above are comparsion bast sorting algorithms. There are bunch of sorting algorithms that don't use comparisons (like Counting Sort, Bucket Sort and Radix Sort).
+    - If you have list of integers in range of 0 to k. To sort this array, we find the number of times the integers appear or the frequency of the integers in the array. These frequencies are represented using another array called counts array with index equal to the range of integers in original array. We iterate through the original array and find the frequency of integer and increment the frequency of the integer in the counts array where index is equal to the integer. Once the counts array is ready, we can now use the counts array to sort the data and refill the input array.
+    - Space Complexity: Extra space is required for counts array. If k is maximum of the elements in input array then the space complexity is O(k).
+    - Time Complexity: Populating counys array, requires iterating over input array which is O(n) complexity. Then we need to iterate through counts array and refill input array which is O(k) operation. So the time complexity is O(n + k) which is equal to O(n). 
+    - Linear complexity is better than O(n log n) or quadratic complexity. So Counting Sort is better than the above sort based on scenario. Because Counting Sort comes with a cost , the cost of allocating extra space. This is called as Time-memory trade off in computer science.
+    - When to use Counting Sort: 1) Allocating extra space is not an issue, 2) Values should be postivie integers otherwise we cannot use them as index in counts array, 3) Most the of the values in the range are present other wise we will end up with lot of empty or 0 in counts array.
+* Bucket Sort:
+    - Another sorting algorithm which does not use comparisons.
+    - The idea of bucket sort is to distribute items in to number of buckets. And then sort the buckets using another sorting algorithm and then finally we can iterate through the buckets array and put the elements in input array.
+    - Instead of sorting large arrays, here you can sort in buckets or smaller array and also you can run the bucket sorts in parallel.
+    - Simple formula for finding a bucket for an item: bucket = item/ number of buckets.
+    - How many buckets do we need: The more buckets we have, the more memory is required to store the buckets but we can sort each bucket in less time because of fewer items in each bucket.
+    - Space Complexity: if we have k buckets then we have to allocate array of k items and each item in this array will be linked list. Total number of items around all this linked list will be equal to the total number of items in input array. So the space complexity is O(n + k).
+    - Time Complexity: Distributing items from input array to buckets array is O(n) operation in best and worst scenario. Then we will need to iterate through buckets array and put the elements back in input array which is O(k) operation in best and worst scenario. Sorting depends on the underlying algorithm used to sort. In best case scenario, we can have single element in each bucket in which case sorting can be O(1) operation. In worst case scenario, all the elements are in single bucket in which case sorting can be O(n^2) operation (considering insertion sort). So the time complexity of bucket sort in best case scenario is O(n + k) or O(n) which is linear and for worst case scenario is O(n^2). So the time complexity depends on the number of buckets. The more buckets will save time but cost space.
+
+## Searching Algorithms
+* Linear Search:
+    - This is the simplest search algorithm.
+    - Iterate over a list and find the item, once you find the item return index of that item otherwise return -1.
+    - Time Complexity: In best case scenario, the target item is the first element in the list and we can find it in O(1) operation. In worst case scenario, the target item can be the last element or not present in the list and it takes O(n) operation.
+* Binary Search:
+    - Binary search works only on sorted list. If the list is not sorted, then we have to sort the list using some sort algorithm before using binary search. So the sort will add to total cost in these cases.
+    - If there are multiple values to lookup in the list, then you can sort it once and do multiple search using binary search.
+    - In binary search, once sorted, the idea is to look for index of middle item using the formula: middle = (left + right)/2. Then compare if the target is less than or equal to middle item. Based on that we can eliminate half of the list for search. This is another example of divide and conquer alogorithm. The same steps are repeated for the partition until the item is found.
+    - Time Complexity: In all scenarios, the binary search works in O(log n) because in every step we divide the number of problems by almost half.
+    - Space Complexity: Binary search can be implemented using recursion, in that case the runtime keeps track of recusion in stack which requires memory space which is equal to number of recursion calls which is equal to O(log n). Binary search can be implemented using iterative approach, in that case the space complexity is O(1).
+* Ternary Search:
+    - This is similar to binary search, but here instead of dividing the list to half in every step, we divide to 3 parts.
+    - Formula to calculate the partition size: (right - left)/3.
+    - Index for mid1: left + partitionsize, Index for mid2: right - partitionsize.
+    - The steps are then repeated for each partition. Ternary search can also be implemented using recursion or iteration approach.
+    - Time Complexity: As we are dividing the list to 3 partitions, the time complexity of ternary search in worst or best case is O(log base 3 of n).
+    - Logarithm: log base 2 of 8 = 3; log base 3 of 8 = 1.89.
+    - So both binary and ternary search runs in logarithmic time but binary search runs in log base 2 of n where as ternary search runs in log base 3 of n.
+    - Though ternary search seems to run faster than binary search, it is not true. In binary search you will need 3 comparisons (target == mid, target < mid, target > mid) where as in ternary search you will need 5 comparsions (target == mid1, target == mid2, target > mid2, targt < mid1, target < mid2 && target > mid1). Because of these mathematical comparisons, it is proven that ternary search takes more time than binary search. Hence binary search is faster than ternary search. The more partitions we have, the search can become slower.
+* Jump Search:
+    - Jump search is an improvement to linear search but it is not as fast as binary search.
+    - We divide the list in to several blocks and instead of checking every item, you jump to the block where the target item may exist. Then a linear search is performed only in that block.
+    - Size of block can be calculated using formula: Squareroot of n.
+    - Time Complexity: The maximum number of items we need to check in best or worst case scenario is equal to the size of the block, hence the time complexity is O(squareroot of n).
+* Exponential Search:
+    - The idea of this search is to start with small range and check if the item is in that range or not. Check if the upper bound of the range is greater than target, if not, then we double the range in each step. Once we find the range in which the target item can exist in, then we do a binary search in that range. However we do not need to search for all the items from beginning of the range because we can eliminate the items which is less then upper bound from previous step.
+    - Time Complexity: If the item exist in position i, then technically we do not search for the item after this range. Hence the time complexity of exponential search is O(log i). Even if the item do not exist the time complexity remains the same as do not search outside the range the item is suppose to be present.
+
+## Additional Resources
+- leetcode.com
+- interviewcake.com
 
     
     
