@@ -272,6 +272,9 @@ Describes performance of an algorithm.
     - We divide the list in to several blocks and instead of checking every item, you jump to the block where the target item may exist. Then a linear search is performed only in that block.
     - Size of block can be calculated using formula: Squareroot of n.
     - Time Complexity: The maximum number of items we need to check in best or worst case scenario is equal to the size of the block, hence the time complexity is O(squareroot of n).
+* Exponential Search:
+    - The idea of this search is to start with small range and check if the item is in that range or not. Check if the upper bound of the range is greater than target, if not, then we double the range in each step. Once we find the range in which the target item can exist in, then we do a binary search in that range. However we do not need to search for all the items from beginning of the range because we can eliminate the items which is less then upper bound from previous step.
+    - Time Complexity: If the item exist in position i, then technically we do not search for the item after this range. Hence the time complexity of exponential search is O(log i). Even if the item do not exist the time complexity remains the same as do not search outside the range the item is suppose to be present.
 
 
     
