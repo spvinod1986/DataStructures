@@ -276,6 +276,9 @@ Describes performance of an algorithm.
     - The idea of this search is to start with small range and check if the item is in that range or not. Check if the upper bound of the range is greater than target, if not, then we double the range in each step. Once we find the range in which the target item can exist in, then we do a binary search in that range. However we do not need to search for all the items from beginning of the range because we can eliminate the items which is less then upper bound from previous step.
     - Time Complexity: If the item exist in position i, then technically we do not search for the item after this range. Hence the time complexity of exponential search is O(log i). Even if the item do not exist the time complexity remains the same as do not search outside the range the item is suppose to be present.
 
+## Additional Resources
+- leetcode.com
+- interviewcake.com
 
     
     
