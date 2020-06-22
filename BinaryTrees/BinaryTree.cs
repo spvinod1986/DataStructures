@@ -63,21 +63,64 @@ namespace BinaryTrees
         {
             TraversePreOrder(root);
         }
+        private void TraversePreOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            System.Console.WriteLine(root.Value);
+            TraversePreOrder(root.Left);
+            TraversePreOrder(root.Right);
+        }
         public void TraverseInOrder()
         {
             TraverseInOrder(root);
+        }
+        private void TraverseInOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            TraverseInOrder(root.Left);
+            System.Console.WriteLine(root.Value);
+            TraverseInOrder(root.Right);
         }
         public void TraversePostOrder()
         {
             TraversePostOrder(root);
         }
+        private void TraversePostOrder(Node root)
+        {
+            if (root == null)
+                return;
+
+            TraversePostOrder(root.Left);
+            TraversePostOrder(root.Right);
+            System.Console.WriteLine(root.Value);
+        }
         public int Height()
         {
             return Height(root);
         }
+        private int Height(Node root)
+        {
+            if (root == null)
+                return -1;
+            if (root.Left == null && root.Right == null)
+                return 0;
+            return 1 + Math.Max(Height(root.Left), Height(root.Right));
+        }
         public int Min()
         {
             return Min(root);
+        }
+        private int Min(Node root)
+        {
+            if (root.Left == null && root.Right == null)
+                return root.Value;
+
+            return Math.Min(Math.Min(Min(root.Left), Min(root.Right)), root.Value);
+
         }
         public int MinOfBinarySearchTree()
         {
@@ -101,65 +144,6 @@ namespace BinaryTrees
                 return false;
             return Equals(root, other.root);
         }
-        public bool IsBinarySearchTree()
-        {
-            return IsBinarySearchTree(root, int.MinValue, int.MaxValue);
-        }
-        public void PrintNodesAtDistance(int distance)
-        {
-            PrintNodesAtDistance(root, distance);
-        }
-        public void TraverseLevelOrder()
-        {
-            for (int i = 0; i <= Height(); i++)
-            {
-                PrintNodesAtDistance(i);
-            }
-        }
-        private void TraversePreOrder(Node root)
-        {
-            if (root == null)
-                return;
-
-            System.Console.WriteLine(root.Value);
-            TraversePreOrder(root.Left);
-            TraversePreOrder(root.Right);
-        }
-        private void TraverseInOrder(Node root)
-        {
-            if (root == null)
-                return;
-
-            TraverseInOrder(root.Left);
-            System.Console.WriteLine(root.Value);
-            TraverseInOrder(root.Right);
-        }
-        private void TraversePostOrder(Node root)
-        {
-            if (root == null)
-                return;
-
-            TraversePostOrder(root.Left);
-            TraversePostOrder(root.Right);
-            System.Console.WriteLine(root.Value);
-        }
-        private int Height(Node root)
-        {
-            if (root == null)
-                return -1;
-            if (root.Left == null && root.Right == null)
-                return 0;
-            return 1 + Math.Max(Height(root.Left), Height(root.Right));
-        }
-        private int Min(Node root)
-        {
-            if (root.Left == null && root.Right == null)
-                return root.Value;
-
-            return Math.Min(Math.Min(Min(root.Left), Min(root.Right)), root.Value);
-
-        }
-
         private bool Equals(Node node1, Node node2)
         {
             if (node1 == null && node2 == null)
@@ -174,6 +158,10 @@ namespace BinaryTrees
 
             return false;
         }
+        public bool IsBinarySearchTree()
+        {
+            return IsBinarySearchTree(root, int.MinValue, int.MaxValue);
+        }
         private bool IsBinarySearchTree(Node node, int min, int max)
         {
             if (node == null)
@@ -187,6 +175,17 @@ namespace BinaryTrees
                 return true;
 
             return false;
+        }
+        public void PrintNodesAtDistance(int distance)
+        {
+            PrintNodesAtDistance(root, distance);
+        }
+        public void TraverseLevelOrder()
+        {
+            for (int i = 0; i <= Height(); i++)
+            {
+                PrintNodesAtDistance(i);
+            }
         }
         private void PrintNodesAtDistance(Node node, int distance)
         {

@@ -11,7 +11,7 @@ namespace Queues
             items = new int[capacity];
         }
 
-        public void Enqueue(int item)
+        public void Enqueue(int item) // O(n)
         {
             if (items.Length == count)
                 throw new InvalidOperationException("Priority Queue is full");
@@ -37,7 +37,7 @@ namespace Queues
             count++;
         }
 
-        public int Dequeue()
+        public int Dequeue() // O(1)
         {
             if (count == 0)
                 throw new InvalidOperationException("Priority Queue is Empty");

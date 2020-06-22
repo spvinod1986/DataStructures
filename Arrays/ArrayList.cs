@@ -11,7 +11,7 @@ namespace Arrays
             items = new int[length];
         }
 
-        public void Insert(int item)
+        public void Insert(int item) // O(n)
         {
             if (items.Length == count + 1)
             {
@@ -28,7 +28,7 @@ namespace Arrays
             count++;
         }
 
-        public void RemoveAt(int index)
+        public void RemoveAt(int index) // O(n)
         {
             if (index < 0 || index >= count)
                 throw new IndexOutOfRangeException("The index is invalid");
@@ -41,7 +41,7 @@ namespace Arrays
             count--;
         }
 
-        public int IndexOf(int item)
+        public int IndexOf(int item) // O(n)
         {
             for (int i = 0; i < count; i++)
             {
