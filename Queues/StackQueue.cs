@@ -8,12 +8,12 @@ namespace Queues
         private Stack<int> stack1 = new Stack<int>();
         private Stack<int> stack2 = new Stack<int>();
 
-        public void Enqueue(int item)
+        public void Enqueue(int item) // O(1)
         {
             stack1.Push(item);
         }
 
-        public int Dequeue()
+        public int Dequeue() // O() ???
         {
             if (stack1.Count == 0 && stack2.Count == 0)
                 throw new InvalidOperationException("Queue is Empty");

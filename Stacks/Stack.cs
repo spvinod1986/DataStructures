@@ -7,7 +7,7 @@ namespace Stacks
         private int[] items = new int[5];
         private int count;
 
-        public void Push(int item)
+        public void Push(int item) // O(1)
         {
             if (items.Length == count)
                 throw new StackOverflowException("Stack is full");
@@ -16,7 +16,7 @@ namespace Stacks
             count++;
         }
 
-        public int Pop()
+        public int Pop() // O(1)
         {
             if (count == 0)
                 throw new InvalidOperationException("Stack is Empty");
@@ -25,7 +25,7 @@ namespace Stacks
             return items[count];
         }
 
-        public int Peek()
+        public int Peek() // O(1)
         {
             if (count == 0)
                 throw new InvalidOperationException("Stack is Empty");

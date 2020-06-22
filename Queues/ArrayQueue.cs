@@ -13,7 +13,7 @@ namespace Queues
         {
             items = new int[capacity];
         }
-        public void Enqueue(int item)
+        public void Enqueue(int item) // O(1)
         {
             if (items.Length == count)
                 throw new InvalidOperationException("Queue is full");
@@ -24,7 +24,7 @@ namespace Queues
             count++;
         }
 
-        public int Dequeue()
+        public int Dequeue() // O(1)
         {
             if (count == 0)
                 throw new InvalidOperationException("Queue is Empty");

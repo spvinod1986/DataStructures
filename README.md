@@ -1,10 +1,10 @@
 # DataStructures and Algorithms
-This project demonstrates data structure and algorithm concepts with examples.
+This project demonstrates data structures and algorithm concepts with examples.
 
 ## Big O
 Describes performance of an algorithm.
 - Time Complexity:
-    - Time algorithm consumes based on length/size of input.
+    - Time which the algorithm consumes based on length/size of input.
 - Space Complexity:
     - (Extra)Space required by algorithm based on length/size of input.
     - Space allocated for input is not counted.
@@ -49,7 +49,7 @@ Describes performance of an algorithm.
     - Each node has 2 pieces of data. 1) value and 2) address of next node in the list.
     - First node is called Head and Last node is called Tail.
     - Can grow or shrink automatically.
-    - LookupByIndex -> O(n). WorstCaseScenario: Elements will not be sequentially stored lik arrays. It can be anywhere in memory. So need to traverse all the nodes and if element is in last node.
+    - LookupByIndex -> O(n). WorstCaseScenario: Elements will not be sequentially stored like arrays. It can be anywhere in memory. So need to traverse all the nodes and if element is in last node.
     - LookupByValue -> O(n). WorstCaseScenario: Element is in last node.
     - InsertAtEnd -> O(1).
     - InsertAtBeginning -> O(1).
@@ -93,9 +93,9 @@ Describes performance of an algorithm.
     - Chaining: Using linkedlist to store multiple items at same array index.
     - OpenAddressing: Address of the key value pair is not determined by hash function. Requires search for available empty address using Probing algorithms.
     - 3 Popular Probing Algorithms - Linear, Quadratic, and Double.
-    - OpenAddressing-LinearProbing: (hask(key) + i) % tablesize. Start from current slot and move one by one until you find empty slot until you reach boundary of array. If all slots are full then array is full. Probing will take longer as items will eventually form clusters.
+    - OpenAddressing-LinearProbing: (hash(key) + i) % tablesize. Start from current slot and move one by one until you find empty slot until you reach boundary of array. If all slots are full then array is full. Probing will take longer as items will eventually form clusters.
     - OpenAddressing-Quadratic: (hash(key) + i^2) % tablesize. Solves clustering problem as empty slots are searched in square of values. Chances of infinite loops are high.
-    - OpenAddressing-DoubleHashing: If collision in first hash then find second hash using prime - (key % prime). Then does (hash1 + i*hash2) % tablesize. If this is not unique then used linear probing.
+    - OpenAddressing-DoubleHashing: If collision in first hash then find second hash using prime - (key % prime). Then does (hash1 + i*hash2) % tablesize. If this is not unique then use linear probing.
 
 ## Non-Linear Data Structures
 * Trees:
@@ -120,7 +120,7 @@ Describes performance of an algorithm.
     - Depth of Node: Depth of root is 0. The path from root to target node or the number of edges from root to target node.
     - Height of Node: Opposite of Depth. Height of leaf nodes are 0. Longest path from the node to leaf is the height of the node. The height of root node is also called the height of the tree.
     - Formula for calculating height of node is 1 + max(height(L),height(R)).
-    - The minimum value in binary search tree is equal to value of left most leaf where as minimum value of binary tree need should be calculated using recursion to find minimum of left and right sub tree and compare it with root value. So the time complexity of this operation in binary tree is O(n) where as that of Binary search tree is O(log n).
+    - The minimum value in binary search tree is equal to value of left most leaf where as minimum value of binary tree should be calculated using recursion to find minimum of left and right sub tree and compare it with root value. So the time complexity of this operation in binary tree is O(n) where as that of Binary search tree is O(log n).
 * AVL Trees:
     - Most of operations in binary search tree runs in logarithmic time. But this can happen only if the tree is balanced.
     - Balanced Tree: height(left) - height(right) <= 1.
@@ -187,7 +187,7 @@ Describes performance of an algorithm.
     - Dense Graph : It is a kind of graph where every node will be connected to every other node except itself. Total number of Edges in dense graph will be V * (V - 1) or V^2 - V. Hence for Dense Graph the space complexity will be O(V + E) = O(V^2).
     - Multi Graph: It is a kind of graph where two nodes can have multiple connections.
     - Adding a node will require just adding one more linked list at the end of array. Hence it is O(1).
-    - Removing a node will require removing the node fro adjacency list and also iterate and remove the target node from every linked list. Hence it is O(V + E). In dense graph it is O(V^2).
+    - Removing a node will require removing the node from adjacency list and also iterate and remove the target node from every linked list. Hence it is O(V + E). In dense graph it is O(V^2).
     - Adding a edge requires to iterate through all the edges of a node to confirm the connection does not exist and then adding the edge. So if K is the number of edges a given node has, then adding a edge is O(K). In dense graph it is O(V). In multi graph, no need to check for existence of a edge and hence it will be O(1).
     - Removing or Finding(Querying) a edge is also O(K) or in dense graph it is O(V). This requires iterating through all edges of a node.
     - Finding adjacent or neighbouring nodes to a node is O(K) or for dense graph it is O(V).
@@ -232,7 +232,7 @@ Describes performance of an algorithm.
     - The time complexity of Quick Sort can be O(n log n) for best case scenario and O(n^2) for worst case scenario.
     - Space Complexity: Unlike merge sort, we are not allocating extra space for quick sort. We may need to consider space required for recursive call because the runtime uses stack to keep track of these recursive calls. The number of times of recursive call is equal to how many times we need to partition the array. The space complexity of Quick Sort is O(log n) for best case scenario and O(n) for worst case scenario.
 * Counting Sort:
-    - All sorting algorithms above are comparsion bast sorting algorithms. There are bunch of sorting algorithms that don't use comparisons (like Counting Sort, Bucket Sort and Radix Sort).
+    - All sorting algorithms above are comparsion based sorting algorithms. There are bunch of sorting algorithms that don't use comparisons (like Counting Sort, Bucket Sort and Radix Sort).
     - If you have list of integers in range of 0 to k. To sort this array, we find the number of times the integers appear or the frequency of the integers in the array. These frequencies are represented using another array called counts array with index equal to the range of integers in original array. We iterate through the original array and find the frequency of integer and increment the frequency of the integer in the counts array where index is equal to the integer. Once the counts array is ready, we can now use the counts array to sort the data and refill the input array.
     - Space Complexity: Extra space is required for counts array. If k is maximum of the elements in input array then the space complexity is O(k).
     - Time Complexity: Populating counys array, requires iterating over input array which is O(n) complexity. Then we need to iterate through counts array and refill input array which is O(k) operation. So the time complexity is O(n + k) which is equal to O(n). 
@@ -274,7 +274,7 @@ Describes performance of an algorithm.
     - Time Complexity: The maximum number of items we need to check in best or worst case scenario is equal to the size of the block, hence the time complexity is O(squareroot of n).
 * Exponential Search:
     - The idea of this search is to start with small range and check if the item is in that range or not. Check if the upper bound of the range is greater than target, if not, then we double the range in each step. Once we find the range in which the target item can exist in, then we do a binary search in that range. However we do not need to search for all the items from beginning of the range because we can eliminate the items which is less then upper bound from previous step.
-    - Time Complexity: If the item exist in position i, then technically we do not search for the item after this range. Hence the time complexity of exponential search is O(log i). Even if the item do not exist the time complexity remains the same as do not search outside the range the item is suppose to be present.
+    - Time Complexity: If the item exist in position i, then technically we do not search for the item after this range. Hence the time complexity of exponential search is O(log i). Even if the item do not exist the time complexity remains the same as we do not search outside the range the item is suppose to be present.
 
 ## Additional Resources
 - leetcode.com

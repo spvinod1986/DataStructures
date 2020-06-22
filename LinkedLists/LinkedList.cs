@@ -8,11 +8,11 @@ namespace LinkedLists
         private Node last;
 
         private int size;
-        public void AddLast(int item)
+        public void AddLast(int item) // O(1)
         {
             var node = new Node { value = item, next = null };
 
-            // if this is the item in the linkedlist
+            // if this is the first item in the linkedlist
             if (first == null)
             {
                 first = last = node;
@@ -26,11 +26,11 @@ namespace LinkedLists
             size++;
         }
 
-        public void AddFirst(int item)
+        public void AddFirst(int item) // O(1)
         {
             var node = new Node { value = item, next = null };
 
-            // if this is the item in the linkedlist
+            // if this is the first item in the linkedlist
             if (first == null)
             {
                 first = last = node;
@@ -43,7 +43,7 @@ namespace LinkedLists
             size++;
         }
 
-        public int IndexOf(int item)
+        public int IndexOf(int item) // O(n)
         {
             int index = 0;
             var current = first;
@@ -60,12 +60,12 @@ namespace LinkedLists
             return -1;
         }
 
-        public bool Contains(int item)
+        public bool Contains(int item) // O(n)
         {
             return IndexOf(item) != -1;
         }
 
-        public void RemoveFirst()
+        public void RemoveFirst() // O(1)
         {
             if (first == null)
                 throw new InvalidOperationException("The list is empty");
@@ -84,7 +84,7 @@ namespace LinkedLists
             size--;
         }
 
-        public void RemoveLast()
+        public void RemoveLast() // O(n) - This will be O(1) in doubly linked list
         {
             if (first == null)
                 throw new InvalidOperationException("The list is empty");
@@ -120,7 +120,7 @@ namespace LinkedLists
             return size;
         }
 
-        public int[] ToArray()
+        public int[] ToArray() // O(n)
         {
             int[] array = new int[size];
             var current = first;
@@ -136,7 +136,7 @@ namespace LinkedLists
             return array;
         }
 
-        public void Reverse()
+        public void Reverse() // O(n)
         {
             if (first == null)
                 return;
@@ -157,7 +157,7 @@ namespace LinkedLists
             first = previous;
         }
 
-        public int GetKthFromTheEnd(int k)
+        public int GetKthFromTheEnd(int k) // O(n)
         {
             if (first == null)
                 throw new InvalidOperationException("The list is empty");

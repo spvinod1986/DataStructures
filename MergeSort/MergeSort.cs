@@ -48,13 +48,14 @@ namespace MergeSort
                     k = k + 1;
                 }
             }
-
+            // for scenarios where length of right partition is less than left
             while (i < left.Length)
             {
                 result[k] = left[i];
                 i = i + 1;
                 k = k + 1;
             }
+            // for scenarios where length of left partition is less than right
             while (j < right.Length)
             {
                 result[k] = right[j];
